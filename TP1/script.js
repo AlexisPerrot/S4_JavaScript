@@ -1,14 +1,21 @@
 function checkPrenom(){
-	return (document.getElementById("prenom").length<12 && document.getElementById("prenom")); 
+	console.log(!/[^a-zA-Z]/.test(document.getElementById("prenom").value) && document.getElementById("prenom").value.length>=1);
+	return (!/[^a-zA-Z]/.test(document.getElementById("prenom").value) && document.getElementById("prenom").value.length>=1);
 }
 function checkNom(){
-	return 1;
+	return (!/[^a-zA-Z]/.test(document.getElementById("nom").value) && document.getElementById("nom").value.length>=1);
 }
 function checkAge(){
 	return ((/[0-9]/.test(document.getElementById("age").value)) && (document.getElementById("age")>=18));
 }
 function checkIdentifiant(){
-	return 1;
+	reponse = false;
+	if(document.getElementById("identifiant").value.length>=1 && document.getElementById("identifiant").value.length<12){
+		if(!/[^a-zA-Z]/.test(document.getElementById("identifiant").value)){
+			reponse = true;
+		}
+	}
+	return reponse;
 }
 function checkMotDePasse(){
 	var strength = 0;
@@ -25,24 +32,42 @@ function checkCGU(){
 	}else return 0;
 }
 function setErrorMessage(message){
-	
+	console.log(message);
 }
 
 function checkValider(){
-  if(checkPrenom){
-    if(checkNom){
-      if(checkAge){
-        if(checkIdentifiant){
-          if(checkMotDePasse){
-            if(checkCGU){
-                document.getElementById("ok").disabled="";
-				console.log("checkValider");
-            }else setErrorMessage("");
-          }else setErrorMessage("");
-        }else setErrorMessage("");
-      }else setErrorMessage("");
-    }else setErrorMessage("");
-  }else setErrorMessage("");
+	if(checkPrenom()){
+		if(checkNom()){
+			if(checkAge()){
+				if(checkIdentifiant()){
+					if(checkMotDePasse()){
+						if(checkCGU()){
+							document.getElementById("ok").disabled="";
+							console.log("checkValider");
+						}else{
+							document.getElementById("ok").disabled="true";
+							setErrorMessage("Vous devez accepter les CGU");
+						}
+					}else{
+						document.getElementById("ok").disabled="true";
+						setErrorMessage("Vous devez entrer un MDP corect");
+					}
+				}else{
+					document.getElementById("ok").disabled="true";
+					setErrorMessage("Vous devez entrer un identifiant correct");
+				}
+			}else{
+				document.getElementById("ok").disabled="true";
+				setErrorMessage("Vous devez entrer un age correct");
+			}
+		}else{
+			document.getElementById("ok").disabled="true";
+			setErrorMessage("Vous devez entrer un nom correct");
+		}
+	}else{
+		document.getElementById("ok").disabled="true";
+		setErrorMessage("Vous devez entrer un prénom correct");
+	}
 }
 
 document.getElementById("prenom").addEventListener("input",checkValider);
