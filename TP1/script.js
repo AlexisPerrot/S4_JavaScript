@@ -6,7 +6,7 @@ function checkNom(){
 	return (!/[^a-zA-Z]/.test(document.getElementById("nom").value) && document.getElementById("nom").value.length>=1);
 }
 function checkAge(){
-	return ((/[0-9]/.test(document.getElementById("age").value)) && (document.getElementById("age")>=18));
+	return ((/[0-9]/.test(document.getElementById("age").value)) && (document.getElementById("age").value)>=18);
 }
 function checkIdentifiant(){
 	reponse = false;
@@ -21,7 +21,7 @@ function checkMotDePasse(){
 	var strength = 0;
 	if (document.getElementById("mdp").value.length>=8){
 		if ((/[a-z]+[A-Z]+[0-9]/.test(document.getElementById("mdp").value))){
-			
+			;
 		}
 	}
 	return 1;
