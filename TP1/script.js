@@ -1,24 +1,40 @@
 function checkPrenom(){
-  return (document.getElementById("prenom").length<12 && document.getElementById("prenom")) 
+	return (document.getElementById("prenom").length<12 && document.getElementById("prenom")); 
 }
+function checkNom(){
+	return 1;
+}
+function checkAge(){
+	return 1;
+}
+function checkIdentifiant(){
+	return 1;
+}
+function checkMotDePasse(){
+	return 1;
+}
+function checkCGU(){
+	return 1;
+}
+function setErrorMessage(message){
+	
+}
+
 function checkValider(){
-  if(){
-    if(){
-      if(){
-        if(){
-          if(){
-            if(){
-              if(){
-                if(){
-                  document.getElementById("ok").disabled="false";
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
+  if(checkPrenom){
+    if(checkNom){
+      if(checkAge){
+        if(checkIdentifiant){
+          if(checkMotDePasse){
+            if(checkCGU){
+                document.getElementById("ok").disabled="";
+				console.log("checkValider");
+            }else setErrorMessage("");
+          }else setErrorMessage("");
+        }else setErrorMessage("");
+      }else setErrorMessage("");
+    }else setErrorMessage("");
+  }else setErrorMessage("");
 }
 
 document.getElementById("prenom").addEventListener("change",checkValider);
