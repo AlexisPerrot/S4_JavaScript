@@ -5,16 +5,24 @@ function checkNom(){
 	return 1;
 }
 function checkAge(){
-	return 1;
+	return ((/[0-9]/.test(document.getElementById("age").value)) && (document.getElementById("age")>=18));
 }
 function checkIdentifiant(){
 	return 1;
 }
 function checkMotDePasse(){
+	var strength = 0;
+	if (document.getElementById("mdp").value.length>=8){
+		if ((/[a-z]+[A-Z]+[0-9]/.test(document.getElementById("mdp").value))){
+			
+		}
+	}
 	return 1;
 }
 function checkCGU(){
-	return 1;
+	if (document.getElementById("cgu").checked === true){
+		return 1;
+	}else return 0;
 }
 function setErrorMessage(message){
 	
@@ -37,10 +45,10 @@ function checkValider(){
   }else setErrorMessage("");
 }
 
-document.getElementById("prenom").addEventListener("change",checkValider);
-document.getElementById("nom").addEventListener("change",checkValider);
-document.getElementById("age").addEventListener("change",checkValider);
-document.getElementById("identifiant").addEventListener("change",checkValider);
-document.getElementById("mdp").addEventListener("change",checkValider);
-document.getElementById("mdp2").addEventListener("change",checkValider);
-document.getElementById("cgu").addEventListener("change",checkValider);
+document.getElementById("prenom").addEventListener("input",checkValider);
+document.getElementById("nom").addEventListener("input",checkValider);
+document.getElementById("age").addEventListener("input",checkValider);
+document.getElementById("identifiant").addEventListener("input",checkValider);
+document.getElementById("mdp").addEventListener("input",checkValider);
+document.getElementById("mdp2").addEventListener("input",checkValider);
+document.getElementById("cgu").addEventListener("input",checkValider);
