@@ -128,18 +128,23 @@ function checkValider(){
 	}
 }
 
-document.getElementById("prenom").addEventListener("input",checkPrenom);
-document.getElementById("nom").addEventListener("input",checkNom);
-document.getElementById("age").addEventListener("input",checkAge);
-document.getElementById("identifiant").addEventListener("input",checkIdentifiant);
-document.getElementById("mdp").addEventListener("input",checkMotDePasse);
-document.getElementById("mdp2").addEventListener("input",checkMDP2);
-document.getElementById("cgu").addEventListener("input",checkCGU);
+window.addEventListener("load", function(){
+	document.getElementById("prenom").addEventListener("input",checkPrenom);
+	document.getElementById("nom").addEventListener("input",checkNom);
+	document.getElementById("age").addEventListener("input",checkAge);
+	document.getElementById("identifiant").addEventListener("input",checkIdentifiant);
+	document.getElementById("mdp").addEventListener("input",checkMotDePasse);
+	document.getElementById("mdp2").addEventListener("input",checkMDP2);
+	document.getElementById("cgu").addEventListener("input",checkCGU);
 
-document.getElementById("prenom").addEventListener("change",checkValider);
-document.getElementById("nom").addEventListener("change",checkValider);
-document.getElementById("age").addEventListener("change",checkValider);
-document.getElementById("identifiant").addEventListener("change",checkValider);
-document.getElementById("mdp").addEventListener("change",checkValider);
-document.getElementById("mdp2").addEventListener("change",checkValider);
-document.getElementById("cgu").addEventListener("change",checkValider);
+	document.getElementById("prenom").addEventListener("change",checkValider);
+	document.getElementById("nom").addEventListener("change",checkValider);
+	document.getElementById("age").addEventListener("change",checkValider);
+	document.getElementById("identifiant").addEventListener("change",checkValider);
+	document.getElementById("mdp").addEventListener("change",checkValider);
+	document.getElementById("mdp2").addEventListener("change",checkValider);
+	document.getElementById("cgu").addEventListener("change",checkValider);
+})
+
+ 
+
