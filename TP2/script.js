@@ -1,5 +1,7 @@
+
+//Met à jour l'horloge toutes les secondes et appelle la fonction "verifAlarmes" à chque début de minute.
 function horlogeUpdate(){
-	var dateActuelle = new Date;
+	var dateActuelle = new Date();
 	var secActuelle = dateActuelle.getSeconds();
 	var minActuelle = dateActuelle.getMinutes();
 	var heureActuelle=dateActuelle.getHours();
@@ -10,6 +12,8 @@ function horlogeUpdate(){
 	setTimeout(horlogeUpdate, 1000);
 }
 
+//Vérifie si l'heure passée en paramètre est égale à chacune des alarmes et les déclenche les unes après les autres (si plusieurs correspondent)
+//en affichant successivement des pop-up contenant le nom de l'alarme et en jouant la musique associée
 function verifAlarmes(heureActuelle, minActuelle){
 	var alarmes = document.querySelectorAll(".alarme");
 	alarmes.forEach(function(alarme){
@@ -43,8 +47,8 @@ window.addEventListener("load", function(){
 	//Ajout de l'eventListener qui écoute les clics sur les boutons '-'
 	document.getElementById("alarmes").addEventListener("click",function(evt){
 		if(evt.target.className==="drop"){
-			document.getElementById("alarmes").removeChild(evt.target.parentNode)
+			document.getElementById("alarmes").removeChild(evt.target.parentNode);
 		}
 	});
-})
+});
 
