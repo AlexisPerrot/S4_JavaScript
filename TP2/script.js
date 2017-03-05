@@ -17,8 +17,7 @@ function horlogeUpdate(){
 function verifAlarmes(heureActuelle, minActuelle){
 	var alarmes = document.querySelectorAll(".alarme");
 	alarmes.forEach(function(alarme){
-		console.log("\nheure alarme : " + alarme.querySelector(".inputHeures").value + "\nminutes alarme : " + alarme.querySelector(".inputMinutes").value + "\nheure actuelle : " + heureActuelle + "\nminute actuelle : " + minActuelle);
-		if(alarme.querySelector(".inputHeures").value == heureActuelle && alarme.querySelector(".inputMinutes").value == minActuelle){
+		if(alarme.querySelector("input[type=\"checkbox\"]").checked === true && alarme.querySelector(".inputHeures").value == heureActuelle && alarme.querySelector(".inputMinutes").value == minActuelle){
 			var musique = document.createElement("AUDIO");
 			if (musique.canPlayType("audio/mpeg")) {
 				musique.setAttribute("src",alarme.querySelector("select").value);
@@ -51,4 +50,3 @@ window.addEventListener("load", function(){
 		}
 	});
 });
-
