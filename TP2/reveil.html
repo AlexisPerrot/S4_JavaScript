@@ -1,13 +1,28 @@
 <!DOCTYPE html>
 <html>
 	<head>
+        <title>Radio Réveil</title>
 		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width">
-		<LINK REL=StyleSheet HREF="style.css" TYPE="text/css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" type="text/css" href="style.css">
 		<script type="text/javascript" src="script.js"></script>
 	</head>
 	<body>
 		<p id="horloge"></p>
-		
+		<time script=""></time>
+        <div id="alarm">
+            <input type="checkbox">
+            <input type="number" min="0" max="23" class="borne">
+            <input type="number" min="0" max="59" class="borne">
+            <input type="text" placeholder="Nom de l'alarme">
+            <SELECT name="son" size="1"> 
+				<OPTION>sound1
+				<OPTION>sound2
+				<OPTION>sound3
+            </SELECT>
+            <button>-</button>
+        </div>
+        
+        <button id="add">+</button>
 	</body>
 </html>
