@@ -15,24 +15,30 @@ function verifAlarmes(heureActuelle, minActuelle){
 	alarmes.forEach(function(alarme){
 		console.log("\nheure alarme : " + alarme.querySelector(".inputHeures").value + "\nminutes alarme : " + alarme.querySelector(".inputMinutes").value + "\nheure actuelle : " + heureActuelle + "\nminute actuelle : " + minActuelle);
 		if(alarme.querySelector(".inputHeures").value == heureActuelle && alarme.querySelector(".inputMinutes").value == minActuelle){
-			alert("c'est l'heure !");
+			var musique = document.createElement("AUDIO");
+			if (musique.canPlayType("audio/mpeg")) {
+				musique.setAttribute("src",alarme.querySelector("select").value);
+				musique.setAttribute("id",alarme.querySelector("select").value);
+				musique.play();
+			}
+			if(!alert(alarme.querySelector(".nomAlarme").value))musique.pause();
 		}
 	});
 }
 
-function addAlarme(){
-	var listeAlarmes = document.getElementById("alarmes");
-	var newAlarme = listeAlarmes.lastChild.cloneNode(true);
-	listeAlarmes.insertBefore(newAlarme,listeAlarmes.lastChild);
-	document.getElementById("add").addEventListener("click",addAlarme);
-}
+
 
 window.addEventListener("load", function(){
+	
 	//Lancement de l'horloge qui se refresh à chaque seconde et qui vérifie les alarmes à chaque minutes
 	horlogeUpdate();
 	
 	//Ajout de l'enventListener qui écoute les clics sur les boutons '+'
-	document.getElementById("add").addEventListener("click",addAlarme);
+	document.getElementById("add").addEventListener("click",function(){
+		var listeAlarmes = document.getElementById("alarmes");
+		var newAlarme = listeAlarmes.lastChild.cloneNode(true);
+		listeAlarmes.insertBefore(newAlarme,listeAlarmes.lastChild);
+	});
 	
 	//Ajout de l'eventListener qui écoute les clics sur les boutons '-'
 	document.getElementById("alarmes").addEventListener("click",function(evt){
@@ -41,23 +47,4 @@ window.addEventListener("load", function(){
 		}
 	});
 })
-
-function changeMusic($i) {
-			var x = document.createElement("AUDIO");
-
-			if (x.canPlayType("audio/mpeg")) {
-				x.setAttribute("src",$i);
-				x.setAttribute("id",$i);
-				x.play();
-			}
-			
-			
-		}
-		
-		
-
-function pauseAudio(x) { 
-	if(!alert("C'est l'heure !!!"))x.pause(); 
-}
- 
 

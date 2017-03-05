@@ -8,21 +8,22 @@
 		<script type="text/javascript" src="script.js"></script>
 	</head>
 	<body>
-		<h1>Temps actuel</h1>
-		<p id="horloge"></p>
-		<div id="alarmes">
-			<div class="alarme">
-				<input type="checkbox">
-				<input type="number" min="0" max="23" class="borne inputHeures">
-				<input type="number" min="0" max="59" class="borne inputMinutes">
-				<input type="text" placeholder="Nom de l'alarme">
-				<SELECT name="son" size="1"> 
-					<OPTION>sound1
-					<OPTION>sound2
-					<OPTION>sound3
-				</SELECT>
-				<button class="drop">-</button>
-			</div></div>
-        <button id="add">+</button>
+		<div id="contenu">
+			<p id="horloge"></p>
+			<div id="alarmes">
+				<div class="alarme">
+					<input type="checkbox">
+					<input type="number" value="0" min="0" max="23" class="borne inputHeures">h : 
+					<input type="number" value="0" min="0" max="59" class="borne inputMinutes">m 
+					<input type="text" placeholder="Nom de l'alarme" class="nomAlarme">
+					<SELECT name="son" size="1"> 
+						<OPTION value="BreakfastInAmerica.mp3">BreakfastInAmerica
+						<OPTION value="ChampagneSupernova.mp3">ChampagneSupernova
+						<OPTION value="BitterSweetSymphony.mp3">BitterSweetSymphony
+					</SELECT>
+					<button class="drop">-</button>
+				</div></div>
+			<button id="add">+</button>
+		</div>
 	</body>
 </html>
