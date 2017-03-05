@@ -3,6 +3,6 @@
     
 }
 
-#alarm{
+.alarme:last-child{
     display: none;
 }
