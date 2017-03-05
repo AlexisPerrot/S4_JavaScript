@@ -20,5 +20,22 @@ window.addEventListener("load", function(){
 	
 })
 
+function changeMusic($i) {
+			var x = document.createElement("AUDIO");
+
+			if (x.canPlayType("audio/mpeg")) {
+				x.setAttribute("src",$i);
+				x.setAttribute("id",$i);
+				x.play();
+			}
+			
+			
+		}
+		
+		
+
+function pauseAudio(x) { 
+	if(!alert("C'est l'heure !!!"))x.pause(); 
+}
  
 

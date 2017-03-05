@@ -8,18 +8,19 @@
 		<script type="text/javascript" src="script.js"></script>
 	</head>
 	<body>
+		<h1>Temps actuel</h1>
 		<p id="horloge"></p>
 		<time script=""></time>
         <div id="alarm">
             <input type="checkbox">
-            <input type="number" min="0" max="23" class="borne">
-            <input type="number" min="0" max="59" class="borne">
+            <input type="number" value="0" min="0" max="23" class="borne">
+            <input type="number" value="0" min="0" max="59" class="borne">
             <input type="text" placeholder="Nom de l'alarme">
-            <SELECT name="son" size="1"> 
-				<OPTION>sound1
-				<OPTION>sound2
-				<OPTION>sound3
-            </SELECT>
+            <SELECT name="son" size="1" onChange="changeMusic(value)">
+                    <OPTION value="BreakfastInAmerica.mp3" id="super">Supertramp
+                    <OPTION value="ChampagneSupernova.mp3" id="oasis">Oasis
+                    <OPTION value="BitterSweetSymphony.mp3" id="verve">The Verve
+                </SELECT>
             <button>-</button>
         </div>
         
