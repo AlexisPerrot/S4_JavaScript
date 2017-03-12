@@ -20,7 +20,7 @@
 }
 
 body{
-	background-color: #BBF;
+	background-color: #A5D7E8;
 	text-align:center;
 }
 
@@ -34,4 +34,17 @@ body{
 
 #add{
 	margin-top: 10px;
+}
+
+ul{
+	list-style : "→  ";
+}
+
+a{
+	text-decoration : none;
+	color : black;
+}
+
+a:hover{
+	font-weight : bold;
 }
