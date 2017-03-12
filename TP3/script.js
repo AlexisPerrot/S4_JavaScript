@@ -18,9 +18,9 @@ function changerChapitre(url){
 	req.onload = function() {
 		if (req.status === 200) {
 			var data = JSON.parse(req.responseText);
-				console.log(data)
+				console.log(data);
 				document.getElementById("histoire").textContent = data.txt;
-				document.getElementById("liens").innerHTML = ""
+				document.getElementById("liens").innerHTML = "";
 				for(var i=0;i<data.links.length;i++){
 					var elemListe = document.createElement("li");
 					var lien = document.createElement("a");
@@ -41,12 +41,12 @@ function checkURLCourant(){
 	var url = window.location.href;
 	console.log(url);
 	var urlsplit = url.split("#",2)[1];
-	if(urlsplit != undefined){
+	if(urlsplit !== undefined){
 		console.log(urlsplit);
 		changerChapitre("Chapitre"+urlsplit+".json");
 	}
 	else{
-		changerChapitre("chapitre1.json")
+		changerChapitre("chapitre1.json");
 	}
 }
 
