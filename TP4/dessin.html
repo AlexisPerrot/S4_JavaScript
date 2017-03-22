@@ -8,11 +8,15 @@
 		<script type="text/javascript" src="dessin.js"></script>
 	</head>
 	<body>
-		<div>
-			<canvas></canvas>
-		</div>
-		<div>
-			
+		<canvas id="paint" width="500" height="500"></canvas>
+		<div id="outils">
+			<input type="color" id="colorpicker" value="#ffffff">
+			<button id="ligne" class="bouton">/</button>
+			<button id="rect" class="bouton">&#9633;</button>
+			<button id="circle" class="bouton">O</button>
+			<button id="color-pick" class="bouton"><img src="pipette.png"></button>
+			<button id="effacer" class="bouton"><img src="bin.png"></button>
+			<button type="submit" id="save" class="bouton">Save</button>
 		</div>
 	</body>
 </html>
