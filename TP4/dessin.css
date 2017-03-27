@@ -1,19 +1,28 @@
 #paint{
 	border-style: solid;
-    border-width: 5px;
+    border-width: 2px;
 }
 #outils{
 	width:480px;
 	border-style: solid;
-    border-width: 5px;
+    border-width: 2px;
 	border-radius: 5px;
 	padding : 10px
 }
 .bouton{
+<<<<<<< HEAD
 	width:50px;
 	height:30px;
 }
 .icon{
 	width:20px;
 	height:20px;
+=======
+	width: 50px;
+    height: 30px;
+}
+.icon{
+	width: 20px;
+	height: 20px;
+>>>>>>> aac28a981d9c7f2897fd7be88173f2395cac40e1
 }
