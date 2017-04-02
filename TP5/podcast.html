@@ -1,13 +1,21 @@
 <!DOCTYPE html>
 <html>
 	<head>
-        <title>Paint.js</title>
+        <title>Podcast</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" type="text/css" href="podcast.css">
 		<script type="text/javascript" src="podcast.js"></script>
 	</head>
 	<body>
-
+		<p>http://feeds.soundcloud.com/users/soundcloud:users:88516325/sounds.rss</p>
+		<form>
+			Entrez une URL pour le podcast : <input id="urlPod" placeholder="Entrez l'URL ici"/>
+		</form>
+		<button id="ok">Ok</button>
+		<div id="audioList">
+		</div>
+		<audio controls="true" id="lecteur" autoplay="true">
+		</audio>
 	</body>
 </html>
