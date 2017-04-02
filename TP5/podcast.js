@@ -6,11 +6,11 @@
 		});
 		document.getElementById("ok").addEventListener("click", function(){
 			var oReq = new XMLHttpRequest();
-			console.log(oReq);
-			var url = document.getElementById("urlPod").value;
+			var url = "https://crossorigin.me/"+document.getElementById("urlPod").value;
 			console.log(url);
 			oReq.open("GET", url, true);
-			oReq.onload = function(evt) {
+			console.log(oReq);
+			oReq.onload = function() {
 				var res = oReq.responseXML; // n'est pas responseText
 				console.log(res);
 				var listeItem = res.getElementsByTagName("item");
