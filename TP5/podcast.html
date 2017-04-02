@@ -8,16 +8,33 @@
 		<script type="text/javascript" src="podcast.js"></script>
 	</head>
 	<body>
+
 		<div id="contenu">
-			<p>http://feeds.soundcloud.com/users/soundcloud:users:88516325/sounds.rss</p>
+			<h1>Bienvenue sur cet incroyable lecteur de PodCast !</h1>
+			<div id="consignes">
+				<h3>Comment ça marche ?</h3>
+				Entrer l'URL de votre flux RSS dans le champs ci-dessous et appuyez sur le bouton "Valider".<br/>
+				Attendez quelques instants que la liste des PodCasts se charge, et cliquez sur celui que vous désirez écouter.<br/>
+				Le PodCast se lancera automatiquement, mais vous pouvez contrôler sa lecture dans le cadre en bas à droite.
+			</div>
+			<div id="exemplesRSS">
+				<h3>Exemples de sources de flux RSS :</h3>
+				http://feeds.soundcloud.com/users/soundcloud:users:88516325/sounds.rss<br/>
+				http://podcast.rmc.fr/channel59/RMCInfochannel59.xml<br/>
+				http://rss.cnn.com/services/podcasting/studentnews/rss.xml
+			</div>
 			<form>
-				Entrez une URL pour le podcast : <input id="urlPod" placeholder="Entrez l'URL ici"/>
+				Entrez l'URL source du podcast : <input id="urlPod" placeholder="Entrez l'URL ici"/>
 			</form>
-			<button id="ok">Ok</button>
+			<button id="ok">Valider</button>
 			<ul id="audioList">
 			</ul>
 		</div>
-		<audio controls="true" id="lecteur" autoplay="true">
-		</audio>
+
+		<div id="divLecteur">
+			<h3>LECTEUR MULTIMEDIA</h3>
+			<p>Titre actuel : <span id="titreActuel">Ø</span></p>
+			<audio controls id="lecteur" autoplay></audio>
+		</div>
 	</body>
 </html>

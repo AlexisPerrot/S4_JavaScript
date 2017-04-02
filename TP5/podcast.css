@@ -1,7 +1,9 @@
-#lecteur{
-  position: fixed;
-  bottom:10%;
-  right: 5%;
+#consignes, #exemplesRSS{
+	padding-bottom: 20px;
+}
+
+#ok{
+	margin-top: 20px;
 }
 
 body{
@@ -23,4 +25,25 @@ li:hover{
 
 ul{
 	list-style : "→  ";
+}
+
+#divLecteur{
+  color : #FFF;
+  position: fixed;
+  bottom:10%;
+  right: 5%;
+	background-color: #888;
+	width: 20%;
+	min-width: 310px;
+	padding-bottom: 15px;
+
+  border-style: solid;
+  border-width: 4px 4px 4px 4px;
+	border-color: #555;
+	border-radius: 5px;
+	box-shadow: 6px 6px 10px #000;
+}
+
+#urlPod{
+  width: 70%;
 }
