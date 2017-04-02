@@ -1,0 +1,26 @@
+#lecteur{
+  position: fixed;
+  bottom:10%;
+  right: 5%;
+}
+
+body{
+	background-color: #A5D7E8;
+	text-align:center;
+}
+
+#contenu{
+	margin-top: 100px;
+	background-color: #FFF;
+	display: inline-block;
+	width: 60%;
+	padding-bottom: 30px;
+}
+
+li:hover{
+	font-weight : bold;
+}
+
+ul{
+	list-style : "→  ";
+}

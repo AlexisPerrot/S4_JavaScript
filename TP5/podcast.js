@@ -20,7 +20,7 @@
 					var titleContent =  listeItem[i].children[1].innerHTML;
 					var url = listeItem[i].getElementsByTagName("enclosure")[0].getAttribute("url");
 					var audio = document.createElement("audio");
-					var titre = document.createElement("p");
+					var titre = document.createElement("li");
 					titre.textContent = titleContent;
 					audio.setAttribute("src",url);
 					titre.appendChild(audio);
